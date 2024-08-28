@@ -1,0 +1,11 @@
+logs
+node_modules/
+*.tsbuildinfo
+dist
+lib
+build
+.yarn
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
