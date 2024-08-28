@@ -1,4 +1,4 @@
-# YAML Types and Language Service Plugin
+# YAML-JS Core Libraries
 ![NPM License](https://img.shields.io/npm/l/%40yaml-js%2Fcore)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yaml-js/core/build.yml)
 ![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/org.yaml-js.core?server=https%3A%2F%2Fsonarcloud.io)
@@ -7,9 +7,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/yaml-js/core/badge.svg)](https://snyk.io/test/github/yaml-js/core/)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/yaml-js/core)
 
-# YAML-JS Core Libraries
-
-This project provides core libraries and utilities for reusable functionality across YAML-JS projects .
+This project provides core libraries and utilities for reusable functionality across YAML-JS projects.
 
 ## Projects Information
 
@@ -17,7 +15,7 @@ This project provides core libraries and utilities for reusable functionality ac
 
 ## Contributing
 
-We welcome contributions to the any project at YAML-JS! To get started:
+We welcome contributions to any project at YAML-JS! To get started:
 
 1. Fork the repository.
 2. Clone your fork: `git clone https://github.com/yaml-js/typescript.git`
