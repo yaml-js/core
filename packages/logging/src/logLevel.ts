@@ -16,18 +16,18 @@ const stringToLevels: Record<string, LogLevel> = {
   DEBUG: LogLevel.DEBUG,
   INFO: LogLevel.INFO,
   WARN: LogLevel.WARN,
-  ERROR: LogLevel.ERROR,
+  ERROR: LogLevel.ERROR
 }
 
 export const logLevelToString = (level: LogLevel): string => {
-  return levelToStrings[level];
+  return levelToStrings[level]
 }
 
 export const logLevelFromString = (level: string): LogLevel => {
-  const upper = level.toUpperCase();
+  const upper = level.toUpperCase()
   if (upper in stringToLevels) {
-    return stringToLevels[upper];
+    return stringToLevels[upper]
   } else {
-    return LogLevel.INFO; // default
+    return LogLevel.INFO // default
   }
 }

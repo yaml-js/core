@@ -3,7 +3,7 @@ import { LogLevel, logLevelFromString, logLevelToString } from '../src/logLevel'
 describe('Subject: Loglevel', () => {
 
   it('Scenario 01: It convert from string to LogLevel', async () => {
-    expect(logLevelFromString('DEBUG2')).toBe(LogLevel.DEBUG);
+    expect(logLevelFromString('DEBUG')).toBe(LogLevel.DEBUG);
     expect(logLevelFromString('dEBUg')).toBe(LogLevel.DEBUG);
     expect(logLevelFromString('INFO')).toBe(LogLevel.INFO);
     expect(logLevelFromString('iNFo')).toBe(LogLevel.INFO);
