@@ -11,9 +11,9 @@
   "scripts": {
     "format": "yarn workspaces foreach -Apt run format",
     "lint": "yarn workspaces foreach -Apt run lint",
-    "build": "./scripts/build.sh",
+    "build": "./shared/scripts/build.sh ./deployable-packages.json",
     "test": "yarn workspaces foreach -Apt run test",
-    "deploy": "./scripts/deploy.sh",
+    "deploy": "./shared/scripts/publish-packages.sh ./deployable-packages.json",
     "pre-commit": "yarn lint && yarn format && yarn test",
     "prepare": "husky"
   }

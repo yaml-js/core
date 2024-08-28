@@ -37,8 +37,8 @@
   "license": "MIT",
   "homepage": "https://yaml-js.org",
   "scripts": {
-    "lint": "eslint -c ../../config/eslint.cjs 'src/**/*.ts' 'tests/**/*.ts'",
-    "format": "prettier --config ../../config/prettier.cjs 'src/**/*.ts' --write",
+    "lint": "eslint -c ../../shared/configs/eslint.cjs 'src/**/*.ts' 'tests/**/*.ts'",
+    "format": "prettier --config ../../shared/configs/prettier.cjs 'src/**/*.ts' --write",
     "test": "jest --config ./config/jest.ts --collect-coverage --coverage",
     "deploy": "npm publish --access=public",
     "build": "yarn tsup --config ./config/build.ts"
