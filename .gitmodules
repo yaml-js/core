@@ -1,0 +1,3 @@
+[submodule "shared.node"]
+	path = shared
+	url = https://github.com/yaml-js/shared.node.git
