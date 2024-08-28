@@ -1,0 +1,20 @@
+{
+  "workspaces": [
+    "packages/*",
+    "packages/playground/*"
+  ],
+  "packageManager": "yarn@4.4.0",
+  "devDependencies": {
+    "@yaml-js/config-editor": "^0.1.4",
+    "husky": "^9.1.5"
+  },
+  "scripts": {
+    "format": "yarn workspaces foreach -Apt run format",
+    "lint": "yarn workspaces foreach -Apt run lint",
+    "build": "yarn workspace @yaml-js/typescript build",
+    "test": "yarn workspaces foreach -Apt run test",
+    "deploy": "yarn workspaces focus @yaml-js/typescript run deploy",
+    "pre-commit": "yarn lint && yarn format && yarn test",
+    "prepare": "husky"
+  }
+}
