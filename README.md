@@ -1,46 +1,19 @@
 # YAML Types and Language Service Plugin
-![NPM License](https://img.shields.io/npm/l/%40yaml-js%2Ftypescript)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yaml-js/typescript/build.yml)
-![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/org.yaml-js.typescript?server=https%3A%2F%2Fsonarcloud.io)
-![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/org.yaml-js.typescript?server=https%3A%2F%2Fsonarcloud.io)
-![Sonar Coverage](https://img.shields.io/sonar/coverage/org.yaml-js.typescript?server=https%3A%2F%2Fsonarcloud.io)
-[![Known Vulnerabilities](https://snyk.io/test/github/yaml-js/typescript/badge.svg)](https://snyk.io/test/github/yaml-js/typescript/)
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/yaml-js/typescript)
+![NPM License](https://img.shields.io/npm/l/%40yaml-js%2Fcore)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yaml-js/core/build.yml)
+![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/org.yaml-js.core?server=https%3A%2F%2Fsonarcloud.io)
+![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/org.yaml-js.core?server=https%3A%2F%2Fsonarcloud.io)
+![Sonar Coverage](https://img.shields.io/sonar/coverage/org.yaml-js.core?server=https%3A%2F%2Fsonarcloud.io)
+[![Known Vulnerabilities](https://snyk.io/test/github/yaml-js/core/badge.svg)](https://snyk.io/test/github/yaml-js/core/)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/yaml-js/core)
 
-`@yaml-js/typescript` is a comprehensive library that provides TypeScript types for importing `*.yaml` and `*.yml` files, along with a TypeScript language service plugin to enable IntelliSense for YAML files.
+# YAML-JS Core Libraries
 
-## Features
+This project provides core libraries and utilities for reusable functionality across YAML-JS projects .
 
-- **TypeScript Types**: Import `*.yaml` and `*.yml` files with TypeScript types.
-- **IntelliSense**: Get code completion and IntelliSense for YAML files in your TypeScript projects.
-  - **Schema-based Completion**: Code completion based on the schema file specified in the YAML file.
-  - **Data-based Completion**: If no schema file is specified, code completion will be based on the actual data.
+## Projects Information
 
-## Installation
-
-To install `@yaml-js/typescript`, you can use either npm or yarn:
-
-```bash
-npm install @yaml-js/typescript --save-dev
-or
-yarn add -D @yaml-js/typescript
-```
-
-## Usage
-
-To enable the TypeScript language service plugin, add the following to your **tsconfig.json**:
-
-```json
-{
-  "compilerOptions": {
-    "plugins": [
-      {
-        "name": "@yaml-js/typescript"
-      }
-    ]
-  }
-}
-````
+- **[Logging](./packages/logging):** Simple logging abstractions
 
 ## Contributing
 
@@ -65,13 +38,10 @@ Please ensure your code adheres to the project's coding standards and includes a
 This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for more information.
 
 ## Acknowledgements
-* [Vite](https://vitejs.dev/) - The blazing fast frontend tooling.
-* [YAML](https://yaml.org/) - A human-friendly data serialization standard.
-* [yaml library](github.com/eemeli/yaml) - This fantastic library made our job easier by not having to build a YAML parser
+
 
 ## Contacts for assistance
 - [@pedromvgomes](https://github.com/pedromvgomes) - **Pedro Gomes**, Project Founder
 
 
 If you have any questions, suggestions, or feedback, feel free to open an issue.
-
