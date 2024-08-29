@@ -1,11 +1,13 @@
 export enum LogLevel {
-  DEBUG = 0,
-  INFO = 10,
-  WARN = 20,
-  ERROR = 30
+  TRACE = 0,
+  DEBUG = 10,
+  INFO = 20,
+  WARN = 30,
+  ERROR = 40
 }
 
 const levelToStrings = {
+  [LogLevel.TRACE]: 'TRACE',
   [LogLevel.DEBUG]: 'DEBUG',
   [LogLevel.INFO]: 'INFO',
   [LogLevel.WARN]: 'WARN',
@@ -13,6 +15,7 @@ const levelToStrings = {
 }
 
 const stringToLevels: Record<string, LogLevel> = {
+  TRACE: LogLevel.TRACE,
   DEBUG: LogLevel.DEBUG,
   INFO: LogLevel.INFO,
   WARN: LogLevel.WARN,
