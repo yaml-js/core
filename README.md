@@ -11,7 +11,8 @@ This project provides core libraries and utilities for reusable functionality ac
 
 ## Projects Information
 
-- **[Logging](./packages/logging):** Simple logging abstractions
+- **[Extensions](./packages/extensions):** Simple extension methods (NPM package name @yaml-js/core.extensions)
+- **[Logging](./packages/logging):** Simple logging abstractions (NPM package name @yaml-js/core.logging)
 
 ## Contributing
 
