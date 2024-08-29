@@ -1,19 +1,19 @@
 {
   "packageManager": "yarn@4.4.0",
-  "name": "@yaml-js/core.logging",
-  "description": "Provides simple logging abstractions for YAML-JS projects",
+  "name": "@yaml-js/core.extensions",
+  "description": "Provides simple extension and utility methods for YAML-JS projects",
   "version": "${FROM TAG}",
-  "types": "./lib/yaml-js.logging.d.ts",
-  "main": "./lib/yaml-js.logging.js",
+  "types": "./lib/yaml-js.extensions.d.ts",
+  "main": "./lib/yaml-js.extensions.js",
   "exports": {
     ".": {
       "import": {
-        "types": "./lib/yaml-js.logging.d.mts",
-        "default": "./lib/yaml-js.logging.mjs"
+        "types": "./lib/yaml-js.extensions.d.mts",
+        "default": "./lib/yaml-js.extensions.mjs"
       },
       "require": {
-        "types": "./lib/yaml-js.logging.d.ts",
-        "default": "./lib/yaml-js.logging.js"
+        "types": "./lib/yaml-js.extensions.d.ts",
+        "default": "./lib/yaml-js.extensions.js"
       }
     }
   },
@@ -29,7 +29,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yaml-js/core",
-    "directory": "packages/logging"
+    "directory": "packages/extensions"
   },
   "bugs": {
     "url": "https://github.com/yaml-js/core/issues"
@@ -62,8 +62,5 @@
     "tsup": "^8.2.4",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.3.0"
-  },
-  "dependencies": {
-    "@yaml-js/core.extensions": "workspace:^"
   }
 }
