@@ -5,12 +5,12 @@
       "path": ".."
     },
     {
-      "name": "plugin",
-      "path": "../packages/plugin"
+      "name": "logging",
+      "path": "../packages/logging"
     },
     {
-      "name": "sample-ts-project",
-      "path": "../packages/playground/sample-ts-project"
+      "name": "extensions",
+      "path": "../packages/extensions"
     }
   ],
   "settings": {
