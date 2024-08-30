@@ -1,5 +1,5 @@
 logs
-node_modules/
+**/node_modules/
 *.tsbuildinfo
 dist
 lib
@@ -9,3 +9,4 @@ build
 .vscode/*
 !.vscode/settings.json
 !.vscode/launch.json
+!.vscode/*.code-workspace

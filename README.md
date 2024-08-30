@@ -1,5 +1,4 @@
 # YAML-JS Core Libraries
-![NPM License](https://img.shields.io/npm/l/%40yaml-js%2Fcore)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yaml-js/core/build.yml)
 ![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/org.yaml-js.core?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/org.yaml-js.core?server=https%3A%2F%2Fsonarcloud.io)
