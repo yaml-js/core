@@ -42,6 +42,12 @@ class LoggerWrapper implements Logger {
     }
   }
 
+  trace(message: LogMessageProvider, ...args: unknown[]): void {
+    if (this.level <= LogLevel.TRACE) {
+      this.loggers.forEach((logger) => logger.trace(message, ...args))
+    }
+  }
+
   debug(message: LogMessageProvider, ...args: unknown[]): void {
     if (this.level <= LogLevel.DEBUG) {
       this.loggers.forEach((logger) => logger.debug(message, ...args))
