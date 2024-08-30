@@ -12,7 +12,6 @@ export interface LoggerName {
 export interface Logger {
   withTag(tag: string): Logger
   log(level: LogLevel, message: LogMessageProvider, ...args: unknown[]): void
-  trace(message: LogMessageProvider, ...args: unknown[]): void
   debug(message: LogMessageProvider, ...args: unknown[]): void
   info(message: LogMessageProvider, ...args: unknown[]): void
   warn(message: LogMessageProvider, ...args: unknown[]): void

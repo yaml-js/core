@@ -22,7 +22,7 @@ const colorFullMessageFormater: LogMessageFormater = (level: LogLevel, name: Log
   const nameAndTagPart = `${format}[${name.name}${tagPart}]${consoleStyles.RESET}`
   const timestamp = new Date().toISOString()
   const levelString = logLevelToString(level)
-  return `[${timestamp}] ${nameAndTagPart} ${levelString} ${message}`
+  return `[${timestamp}][${nameAndTagPart}] ${levelString} ${message}`
 }
 
 const createConsoleLogger = (name: LoggerName, logLevel: LogLevel): Logger => {
