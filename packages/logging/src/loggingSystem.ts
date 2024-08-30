@@ -28,7 +28,6 @@ class LoggerWrapper implements Logger {
     private loggers: Logger[],
     private level: LogLevel
   ) {}
-
   withTag(tag: string): Logger {
     return new LoggerWrapper(
       this.loggers.map((logger) => logger.withTag(tag)),
@@ -39,6 +38,12 @@ class LoggerWrapper implements Logger {
   log(level: LogLevel, message: LogMessageProvider, ...args: unknown[]): void {
     if (level >= this.level) {
       this.loggers.forEach((logger) => logger.log(level, message, ...args))
+    }
+  }
+
+  trace(message: LogMessageProvider, ...args: unknown[]): void {
+    if (this.level <= LogLevel.TRACE) {
+      this.loggers.forEach((logger) => logger.trace(message, ...args))
     }
   }
 

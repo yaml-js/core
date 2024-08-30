@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+	  "name": "root",
+      "path": ".."
+    },
+    {
+      "name": "plugin",
+      "path": "../packages/plugin"
+    },
+    {
+      "name": "sample-ts-project",
+      "path": "../packages/playground/sample-ts-project"
+    }
+  ],
+  "settings": {
+	"jest.disabledWorkspaceFolders": ["root"]
+  }
+}
