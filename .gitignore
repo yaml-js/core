@@ -1,9 +1,15 @@
 logs
+log
+.log
+.logs
+
 **/node_modules/
 *.tsbuildinfo
+
 dist
 lib
 build
+
 .yarn
 
 .vscode/*
