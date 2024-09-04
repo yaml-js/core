@@ -3,7 +3,9 @@ import * as path from 'path';
 import { FileLoggerProvider } from '../src/fileLoggerProvider';
 import { addLoggerProvider, getLogger } from '../src/loggingSystem';
 
-const sleep = require('util').promisify(setTimeout)
+import { setTimeout as setTimeoutAsync } from 'timers/promises';
+
+const sleep = async (ms: number) => { await setTimeoutAsync(ms, 'resolved') }
 
 describe('Subject: FileLoggerProvider', () => {
 
