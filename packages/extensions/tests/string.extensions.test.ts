@@ -1,4 +1,4 @@
-import '../src/string.extensions';
+import '../src/yaml-js.extensions';
 
 describe('Subject: String extensions', () => {
 

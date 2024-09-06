@@ -5,28 +5,66 @@ import { LoggerProvider } from './loggerProvider'
 import { LogLevel } from './logLevel'
 import { structuredLogMessageFormatter } from './logMessageFormatters'
 
-const createFileLogger = (filePath: string, name: LoggerName, logLevel: LogLevel): Logger => {
-  const fileName = name.name.replaceAll(".", "_")
+class LoggerBuffer {
+  private buffer: string[] = []
+
+  constructor(
+    private filePath: string,
+    private readonly buffered: boolean,
+    private readonly bufferSize: number
+  ) {
+    if (buffered) {
+      if (bufferSize <= 0) {
+        throw new Error('Buffer size must be greater than 0')
+      }
+      process.on('exit', () => {
+        this.flush()
+      })
+    }
+  }
+
+  public write(message: string) {
+    if (this.buffered) {
+      this.buffer.push(message)
+      if (this.buffer.length >= this.bufferSize) {
+        this.flush()
+      }
+    } else {
+      fs.appendFileSync(this.filePath, `${message}\n`, { encoding: 'utf8' })
+    }
+  }
+
+  private flush() {
+    if (this.buffer.length > 0) {
+      const data = this.buffer.join('\n')
+      fs.appendFileSync(this.filePath, `${data}\n`, { encoding: 'utf8' })
+      this.buffer = []
+    }
+  }
+}
+
+const createFileLogger = (filePath: string, buffered: boolean, bufferSize: number, name: LoggerName, logLevel: LogLevel): Logger => {
+  const fileName = name.name.replaceAll('.', '_')
   if (!path.isAbsolute(filePath)) {
     filePath = path.join(process.cwd(), filePath)
   }
   const logFilePath = path.join(filePath, `${fileName}.${Date.now()}.log`)
-  let fileHandle: fs.promises.FileHandle
+  const buffer = new LoggerBuffer(logFilePath, buffered, bufferSize)
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const writer = async (message: string, _args: unknown[]) => {
-    if (!fileHandle) {
-      fileHandle = await fs.promises.open(logFilePath, 'w')
-    }
-    await fs.promises.appendFile(fileHandle, `${message}\n`, { encoding: 'utf8', flush: true })
+    buffer.write(message)
   }
 
   return createLogger(writer, structuredLogMessageFormatter, name, logLevel)
 }
 
 export class FileLoggerProvider implements LoggerProvider {
-
-  constructor(private readonly logFilePath: string) {
+  constructor(
+    private readonly logFilePath: string,
+    private readonly buffered = false,
+    private readonly bufferSize = 0
+  ) {
     if (!path.isAbsolute(logFilePath)) {
       logFilePath = path.join(process.cwd(), logFilePath)
     }
@@ -34,6 +72,6 @@ export class FileLoggerProvider implements LoggerProvider {
   }
 
   getLogger(name: string, logLevel: LogLevel): Logger {
-    return createFileLogger(this.logFilePath, { name }, logLevel)
+    return createFileLogger(this.logFilePath, this.buffered, this.bufferSize, { name }, logLevel)
   }
 }
