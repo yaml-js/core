@@ -1,4 +1,4 @@
-import '../src/map.extensions';
+import '../src/yaml-js.extensions';
 
 describe('Subject: Map extensions', () => {
 

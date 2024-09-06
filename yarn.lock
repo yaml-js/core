@@ -1517,7 +1517,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yaml-js/core.logging@workspace:packages/logging":
+"@yaml-js/core.logging@workspace:^, @yaml-js/core.logging@workspace:packages/logging":
   version: 0.0.0-use.local
   resolution: "@yaml-js/core.logging@workspace:packages/logging"
   dependencies:
@@ -1528,6 +1528,34 @@ __metadata:
     "@yaml-js/config-eslint": "npm:^0.1.4"
     "@yaml-js/config-prettier": "npm:^0.1.4"
     "@yaml-js/core.extensions": "workspace:^"
+    eslint: "npm:^9.9.1"
+    eslint-config-prettier: "npm:^9.1.0"
+    globals: "npm:^15.9.0"
+    jest: "npm:^29.7.0"
+    jest-extended: "npm:^4.0.2"
+    jest-html-reporter: "npm:^3.10.2"
+    jest-junit: "npm:^16.0.0"
+    prettier: "npm:^3.3.3"
+    ts-jest: "npm:^29.2.5"
+    ts-node: "npm:^10.9.2"
+    tsup: "npm:^8.2.4"
+    typescript: "npm:^5.5.4"
+    typescript-eslint: "npm:^8.4.0"
+  languageName: unknown
+  linkType: soft
+
+"@yaml-js/core.workers@workspace:packages/workers":
+  version: 0.0.0-use.local
+  resolution: "@yaml-js/core.workers@workspace:packages/workers"
+  dependencies:
+    "@types/eslint": "npm:^9.6.1"
+    "@types/eslint-config-prettier": "npm:^6.11.3"
+    "@types/jest": "npm:^29.5.12"
+    "@types/node": "npm:^22.5.2"
+    "@yaml-js/config-eslint": "npm:^0.1.4"
+    "@yaml-js/config-prettier": "npm:^0.1.4"
+    "@yaml-js/core.extensions": "workspace:^"
+    "@yaml-js/core.logging": "workspace:^"
     eslint: "npm:^9.9.1"
     eslint-config-prettier: "npm:^9.1.0"
     globals: "npm:^15.9.0"
