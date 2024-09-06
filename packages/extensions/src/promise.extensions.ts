@@ -1,34 +1,33 @@
-import { EventEmitter } from "events";
+import { EventEmitter } from 'events'
 
 declare global {
   interface Promise<T> {
-    cancelable(): [Promise<T>, () => void];
+    cancelable(): [Promise<T>, () => void]
   }
 }
 
 class CancelEmmitter extends EventEmitter {
   cancel() {
-    this.emit('cancel');
+    this.emit('cancel')
   }
 }
 
 Promise.prototype.cancelable = function <T>(this: Promise<T>): [Promise<T>, () => void] {
-  const cancelEmitter = new CancelEmmitter();
+  const cancelEmitter = new CancelEmmitter()
   const promise = new Promise<T>(async (resolve, reject) => {
     cancelEmitter.on('cancel', () => {
-      reject(new Error('Promise canceled'));
-    });
+      reject(new Error('Promise canceled'))
+    })
 
     try {
-      const result = await this;
-      resolve(result);
+      const result = await this
+      resolve(result)
     } catch (err) {
-      reject(err);
+      reject(err)
     }
-  });
+  })
 
-  return [promise, () => cancelEmitter.cancel()];
+  return [promise, () => cancelEmitter.cancel()]
 }
 
-
-export { }
+export {}

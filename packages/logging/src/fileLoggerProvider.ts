@@ -6,14 +6,20 @@ import { LogLevel } from './logLevel'
 import { structuredLogMessageFormatter } from './logMessageFormatters'
 
 class LoggerBuffer {
-  private buffer: string[] = [];
+  private buffer: string[] = []
 
-  constructor(private filePath: string, private readonly buffered: boolean, private readonly bufferSize: number) {
+  constructor(
+    private filePath: string,
+    private readonly buffered: boolean,
+    private readonly bufferSize: number
+  ) {
     if (buffered) {
       if (bufferSize <= 0) {
         throw new Error('Buffer size must be greater than 0')
       }
-      process.on('exit', () => { this.flush() })
+      process.on('exit', () => {
+        this.flush()
+      })
     }
   }
 
@@ -38,7 +44,7 @@ class LoggerBuffer {
 }
 
 const createFileLogger = (filePath: string, buffered: boolean, bufferSize: number, name: LoggerName, logLevel: LogLevel): Logger => {
-  const fileName = name.name.replaceAll(".", "_")
+  const fileName = name.name.replaceAll('.', '_')
   if (!path.isAbsolute(filePath)) {
     filePath = path.join(process.cwd(), filePath)
   }
@@ -47,15 +53,18 @@ const createFileLogger = (filePath: string, buffered: boolean, bufferSize: numbe
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const writer = async (message: string, _args: unknown[]) => {
-    buffer.write(message);
+    buffer.write(message)
   }
 
   return createLogger(writer, structuredLogMessageFormatter, name, logLevel)
 }
 
 export class FileLoggerProvider implements LoggerProvider {
-
-  constructor(private readonly logFilePath: string, private readonly buffered = false, private readonly bufferSize = 0) {
+  constructor(
+    private readonly logFilePath: string,
+    private readonly buffered = false,
+    private readonly bufferSize = 0
+  ) {
     if (!path.isAbsolute(logFilePath)) {
       logFilePath = path.join(process.cwd(), logFilePath)
     }

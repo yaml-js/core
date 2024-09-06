@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 declare interface String {
   toCamelCase(): string
   toSnakeCase(): string
@@ -13,13 +14,13 @@ const REGEXS = {
 }
 
 String.prototype.splitLines = function (this: string): string[] {
-  if (this.length === 0) return [];
+  if (this.length === 0) return []
 
-  return this.split(REGEXS.lineBreak);
+  return this.split(REGEXS.lineBreak)
 }
 
 String.prototype.toCamelCase = function (this: string): string {
-  if (this.length === 0) return "";
+  if (this.length === 0) return ''
 
   const nonAlphanumeric = this.replace(REGEXS.nonAlphanumeric, ' ')
 
@@ -29,18 +30,17 @@ String.prototype.toCamelCase = function (this: string): string {
 
   return words
     .map((word, index) => {
-      if (index === 0) return word.toLowerCase(); // Convert the first word to lowercase
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(); // Capitalize the first letter of subsequent words
+      if (index === 0) return word.toLowerCase() // Convert the first word to lowercase
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() // Capitalize the first letter of subsequent words
     })
-    .join(''); // Join the words without spaces
+    .join('') // Join the words without spaces
 }
 
-String.prototype.toSnakeCase= function (this: string): string {
-  if (this.length === 0) return "";
+String.prototype.toSnakeCase = function (this: string): string {
+  if (this.length === 0) return ''
 
-  return this
-      .replace(REGEXS.camelToSnakeCase, '$1_$2') // Handle camelCase to snake_case
-      .replace(REGEXS.consecutiveUppercase, '$1_$2') // Handle consecutive uppercase letters
-      .replace(REGEXS.spacesAndHyphens, '_') // Replace spaces and hyphens with underscores
-      .toLowerCase(); // Convert to lowercase
+  return this.replace(REGEXS.camelToSnakeCase, '$1_$2') // Handle camelCase to snake_case
+    .replace(REGEXS.consecutiveUppercase, '$1_$2') // Handle consecutive uppercase letters
+    .replace(REGEXS.spacesAndHyphens, '_') // Replace spaces and hyphens with underscores
+    .toLowerCase() // Convert to lowercase
 }
