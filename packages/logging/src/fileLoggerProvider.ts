@@ -30,14 +30,14 @@ class LoggerBuffer {
         this.flush()
       }
     } else {
-      fs.appendFileSync(this.filePath, message, { encoding: 'utf8' })
+      fs.appendFileSync(this.filePath, `${message}\n`, { encoding: 'utf8' })
     }
   }
 
   private flush() {
     if (this.buffer.length > 0) {
       const data = this.buffer.join('\n')
-      fs.appendFileSync(this.filePath, data, { encoding: 'utf8' })
+      fs.appendFileSync(this.filePath, `${data}\n`, { encoding: 'utf8' })
       this.buffer = []
     }
   }
