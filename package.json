@@ -6,7 +6,7 @@
   "packageManager": "yarn@4.4.0",
   "devDependencies": {
     "@yaml-js/config-editor": "^0.1.4",
-    "husky": "^9.1.5"
+    "husky": "^9.1.6"
   },
   "scripts": {
     "format": "yarn workspaces foreach -Apt run format",

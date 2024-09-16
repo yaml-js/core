@@ -46,8 +46,8 @@
   "devDependencies": {
     "@types/eslint": "^9.6.1",
     "@types/eslint-config-prettier": "^6.11.3",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^22.5.4",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.5.5",
     "@yaml-js/config-eslint": "^0.1.4",
     "@yaml-js/config-prettier": "^0.1.4",
     "eslint": "^9.10.0",
